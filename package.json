@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "aws-sdk": "^2.193.0",
+    "taskcluster-client": "^3.2.1"
+  },
+  "name": "buffered-async-iterator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/djmitche/buffered-async-iterator",
+  "author": "Dustin Mitchell <dustin@v.igoro.us>",
+  "license": "MIT",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "devDependencies": {
+    "mocha": "^7.1.1"
+  }
+}
