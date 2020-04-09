@@ -24,6 +24,17 @@ Without this functionality (that is, with `for await (let item of
 someSlowIterator)`), the DB queries and the HTTP calls would alternate, each
 unnecessarily waiting for the other.
 
+The buffer has a `length` property which gives the current number of buffered
+items.
+
+```js
+const buf = buffer(someSlowIterator, 20);
+for await (let item of buffer) {
+  await someSlowOperation(item);
+  console.log(`${buf.length} items currently buffered`);
+}
+```
+
 # Inspiration
 
 Inspired by https://github.com/mirkokiefer/async-iterators but updated for modern async iterators

@@ -8,6 +8,10 @@
   "scripts": {
     "test": "mocha test.js"
   },
+  "engine-strict": true,
+  "engines": {
+    "node": ">=12"
+  },
   "devDependencies": {
     "mocha": "^7.1.1"
   }

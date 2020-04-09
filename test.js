@@ -108,4 +108,14 @@ describe('buffer', function() {
       'out-5',
     ])
   });
+
+  it('has a length property', async function() {
+    const buf = buffer(range(6), 10);
+    const iter = buf[Symbol.asyncIterator]();
+    // start it up..
+    await iter.next();
+    // give it a beat to accumulate the rest of the range..
+    await new Promise(res => setTimeout(res, 1));
+    assert(buf.length > 1);
+  });
 });

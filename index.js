@@ -48,7 +48,11 @@ module.exports = (iterator, maxBuffer) => {
     }
   };
   
-  return {
+  const iter = {
     [Symbol.asyncIterator]: () => ({next}),
-  }
+  };
+  Object.defineProperty(iter, 'length', {
+    get: () => buf.length,
+  });
+  return iter;
 };
